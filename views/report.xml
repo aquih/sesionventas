@@ -1,13 +1,15 @@
 <odoo>
     <data>
-        <report
-            id="construfacil_cierre_caja"
-            string="Cierre de caja"
-            model="sesion.ventas"
-            report_type="qweb-pdf"
-            file="sesionventas.report_cierre_caja"
-            name="sesionventas.report_cierre_caja"
-        />
+
+        <record id="sesionventas_cierre_caja" model="ir.actions.report">
+            <field name="name">Cierre de caja</field>
+            <field name="model">sesion.ventas</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">sesionventas.report_cierre_caja</field>
+            <field name="report_file">sesionventas.report_cierre_caja</field>
+            <field name="binding_model_id" ref="sesionventas.model_sesion_ventas"/>
+            <field name="binding_type">report</field>
+        </record>
 
     </data>
 </odoo>
