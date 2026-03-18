@@ -188,7 +188,7 @@
                                         <td><t t-esc="pago.date" t-options='{"widget": "date"}'/></td>
                                         <td><t t-esc="pago.partner_id.name"/></td>
                                         <td><t t-esc="pago.name"/></td>
-                                        <td><t t-esc="pago.ref"/></td>
+                                        <td><t t-esc="pago.memo"/></td>
                                         <td><t t-esc="pago.journal_id.name"/></td>
                                         <td><t t-esc="pago.amount"/></td>
                                         <td><t t-esc="pago.state"/></td>

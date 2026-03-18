@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <form string="Sesion para ventas" create="0">
                 <header>
-                    <button name="action_abrir_sesion" type="object" string="Abir sesion" invisible="[('estado', '!=', 'borrador')]" class="oe_highlight"/>
-                    <button name="action_cerrar_sesion" type="object" string="Cerrar sesion" invisible="[('estado', '!=', 'abierto')]" class="oe_highlight"/>
+                    <button name="action_abrir_sesion" type="object" string="Abir sesion" invisible="estado != 'borrador'" class="oe_highlight"/>
+                    <button name="action_cerrar_sesion" type="object" string="Cerrar sesion" invisible="estado != 'abierto'" class="oe_highlight"/>
                     <field name="estado" widget="statusbar" statusbar_visible="borrador,abierto,cerrado" />
                 </header>
                 <sheet>
@@ -27,10 +27,10 @@
                             <field name="equipo_venta_id"/>
                         </group>
                     </group>
-                    <separator string="Facturas" invisible="[('estado', '=', 'borrador')]"/>
-                    <field name="facturas_ids" invisible="[('estado', '=', 'borrador')]"/>
-                    <separator string="Pagos" invisible="[('estado', '=', 'borrador')]"/>
-                    <field name="pagos_ids" invisible="[('estado', '=', 'borrador')]"/>
+                    <separator string="Facturas" invisible="estado == 'borrador'"/>
+                    <field name="facturas_ids" invisible="estado == 'borrador'"/>
+                    <separator string="Pagos" invisible="estado == 'borrador'"/>
+                    <field name="pagos_ids" invisible="estado == 'borrador'"/>
                 </sheet>
             </form>
         </field>
